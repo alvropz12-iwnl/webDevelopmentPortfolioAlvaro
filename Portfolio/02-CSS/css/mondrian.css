@@ -1,0 +1,83 @@
+/* Quitamos el margen del navegador y agregamos un poco de espacio. */
+body {
+    margin: 0;
+    padding: 30px;
+}
+
+/* El lienzo negro que contiene toda la composición. */
+.mondrian {
+    width: 600px;
+    height: 500px;
+    /* Mantiene el borde dentro de las medidas indicadas. */
+    box-sizing: border-box;
+    /* Las cajas internas usarán este lienzo como referencia. */
+    position: relative;
+    /* auto centra el lienzo horizontalmente. */
+    margin: 30px auto;
+    border: 10px solid black;
+}
+
+/* Reglas que comparten todos los rectángulos internos. */
+.mondrian div {
+    background-color: white;
+    border: 5px solid black;
+    box-sizing: border-box;
+    /* absolute coloca cada rectángulo con top y left. */
+    position: absolute;
+}
+
+/* Colores primarios de la composición. */
+.mondrian .red {
+    background-color: #e53935;
+}
+
+.mondrian .yellow {
+    background-color: #fdd835;
+}
+
+.mondrian .blue {
+    background-color: #1e88e5;
+}
+
+/* Cada bloque tiene tamaño y posición propios. */
+.white-left {
+    width: 260px;
+    height: 300px;
+    top: 0;
+    left: 0;
+}
+
+.red {
+    width: 160px;
+    height: 220px;
+    top: 0;
+    left: 260px;
+}
+
+.yellow {
+    width: 160px;
+    height: 220px;
+    top: 0;
+    left: 420px;
+}
+
+.blue {
+    width: 160px;
+    height: 160px;
+    top: 220px;
+    left: 260px;
+}
+
+.white-right {
+    width: 160px;
+    height: 260px;
+    top: 220px;
+    left: 420px;
+}
+
+.white-bottom {
+    width: 260px;
+    height: 180px;
+    top: 300px;
+    left: 0;
+}

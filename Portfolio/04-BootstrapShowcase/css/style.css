@@ -1,0 +1,37 @@
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.sdg-hero-banner {
+    padding: 40px 30px;
+    color: #ffffff;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.metric-slide {
+    min-height: 260px;
+    padding: 50px 20px;
+    color: #ffffff;
+    text-align: center;
+    background: #246b4a;
+}
+
+.metric-slide strong {
+    display: block;
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+.metric-slide span { font-size: 1.1rem; }
+.metric-two { background: #1b5e78; }
+.metric-three { background: #8b5a2b; }
+
+[data-bs-theme="dark"] body { background-color: #212529; }
+
+@media (max-width: 575.98px) {
+    .sdg-hero-banner { padding: 30px 20px; }
+    .metric-slide { min-height: 220px; padding-top: 40px; }
+}
