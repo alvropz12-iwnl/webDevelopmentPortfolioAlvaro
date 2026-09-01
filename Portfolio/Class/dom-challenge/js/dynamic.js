@@ -15,8 +15,17 @@ const createActionCard = (text, priority) => {
     const li = document.createElement('li');
     
     // 2b. Add basic utility classes: 'list-group-item', 'd-flex', 'justify-content-between', 'align-items-center', 'impact-card'
+    li.classList.add(
+        "list-group-item",
+        "d-flex",
+        "justify-content-between",
+        "align-items-center",
+        "impact-card"
+    );
+
     // 2c. Add appropriate priority class ('priority-high', 'priority-medium', 'priority-low')
-    
+    li.classList.add(`priority-${priority}`);
+
     // 2d. Construct interior HTML with text nodes, priority badges, action button icons
     // Make sure the action buttons have explicit data-action tags:
     // - Complete button: data-action="toggle"
@@ -24,19 +33,30 @@ const createActionCard = (text, priority) => {
     // - Move Down button: data-action="down"
     // - Delete button: data-action="delete"
     li.innerHTML = `
-        <div class="d-flex align-items-center">
-            <span class="card-title fw-semibold">${text}</span>
-            <span class="badge ms-2 bg-secondary text-capitalize">${priority}</span>
-        </div>
-        <div class="btn-group btn-group-sm">
-            <button class="btn btn-outline-success" data-action="toggle">✓</button>
-            <button class="btn btn-outline-secondary" data-action="up">▲</button>
-            <button class="btn btn-outline-secondary" data-action="down">▼</button>
-            <button class="btn btn-outline-danger" data-action="delete">🗑</button>
-        </div>
-    `;
-    
-    return li;
+    <div class="d-flex align-items-center">
+        <span class="card-title fw-semibold">${text}</span>
+        <span class="badge ms-2 bg-secondary text-capitalize">
+            ${priority}
+        </span>
+    </div>
+
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-outline-success" data-action="toggle">
+            ✓
+        </button>
+        <button class="btn btn-outline-secondary" data-action="up">
+            ▲
+        </button>
+        <button class="btn btn-outline-secondary" data-action="down">
+            ▼
+        </button>
+        <button class="btn btn-outline-danger" data-action="delete">
+            🗑
+        </button>
+    </div>
+`;
+
+return li;
 };
 
 // ==========================================
@@ -44,6 +64,11 @@ const createActionCard = (text, priority) => {
 // ==========================================
 const updateCounter = () => {
     // Calculate total children nodes inside actionList and update cardCounter display.
+    const total = actionList.children.length;
+
+    const completed = actionList.querySelectorAll('.completed').length;
+
+    cardCounter.textContent = `Total: ${total} Items |  Completed: ${completed}`;
 };
 
 // ==========================================
@@ -57,11 +82,13 @@ actionForm.addEventListener('submit', (e) => {
         const text = actionInput.value.trim(); //remove empty spaces on the beginning and the end
         const priority = prioritySelect.value;
         if(text === "") return;
+
         const newCard = createActionCard(text, priority);
         actionList.appendChild(newCard);
         actionInput.value = '';
         prioritySelect.value = "medium";
         
+        updateCounter();
 });
 
 // ==========================================
@@ -69,26 +96,39 @@ actionForm.addEventListener('submit', (e) => {
 // ==========================================
 actionList.addEventListener('click', (e) => {
     // 5a. Identify if a button or an icon with "data-action" was clicked
-    const action = e.target.getAttribute('data-action');
-    if (!action) return; // Exit if user clicked whitespace
+    const button = e.target.closest('[data-action]');
+    if (!button) return; // Exit if user clicked whitespace
+    const action = button.dataset.action
 
     // 5b. Find the closest target parent card element (.impact-card)
-    const currentCard = e.target.closest('.impact-card');
+    const currentCard = button.closest('.impact-card');
     if (!currentCard) return;
 
     // 5c. Implement dynamic operations based on selected action types:
     if (action === 'toggle') {
         // Toggle complete class on currentCard
+        currentCard.classList.toggle('completed');
+        updateCounter();
     } 
     else if (action === 'delete') {
         // Fade out/remove currentCard from DOM, update totals
+        currentCard.remove();
+        updateCounter();
     } 
     else if (action === 'up') {
         // Find sibling element directly above currentCard
+        const previousCard = currentCard.previousElementSibling;
         // If it exists, use parentNode.insertBefore() to swap positions
+        if(previousCard) {
+            actionList.insertBefore(currentCard, previousCard);
+        }
     } 
     else if (action === 'down') {
         // Find sibling element directly below currentCard
+        const nextCard = currentCard.nextElementSibling;
         // If it exists, use sibling.nextElementSibling to swap or insertBefore
+        if(nextCard) {
+            actionList.insertBefore(nextCard, currentCard);
+        }
     }
 });
