@@ -1,3 +1,30 @@
 body {
     margin: 0;
 }
+
+div {
+    width: 200px;
+    height: 200px;
+}
+
+div p {
+    margin: 0;
+}
+
+.top {
+    background-color: rgb(150, 210, 230);
+    border: 10px solid black;
+    padding: 20px;
+}
+
+.middle {
+    background-color: red;
+    border: 20px solid black;
+    margin-left: 260px;
+}
+
+.bottom {
+    background-color: yellow;
+    border: 10px solid black;
+    margin-left: 500px;
+}

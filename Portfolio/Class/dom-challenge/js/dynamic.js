@@ -25,6 +25,19 @@ const createActionCard = (text, priority) => {
 
     // 2c. Add appropriate priority class ('priority-high', 'priority-medium', 'priority-low')
     li.classList.add(`priority-${priority}`);
+    let badgeColor = 'bg-secondary';
+
+    switch (priority){
+        case 'high':
+            badgeColor = 'bg-danger';
+            break;
+        case 'medium':
+            badgeColor = 'bg-warning';
+            break;
+        case 'low':
+            badgeColor = 'bg-success';
+            break;
+    }
 
     // 2d. Construct interior HTML with text nodes, priority badges, action button icons
     // Make sure the action buttons have explicit data-action tags:
@@ -35,7 +48,7 @@ const createActionCard = (text, priority) => {
     li.innerHTML = `
     <div class="d-flex align-items-center">
         <span class="card-title fw-semibold">${text}</span>
-        <span class="badge ms-2 bg-secondary text-capitalize">
+        <span class="badge ms-2 ${badgeColor} text-capitalize">
             ${priority}
         </span>
     </div>
@@ -68,7 +81,7 @@ const updateCounter = () => {
 
     const completed = actionList.querySelectorAll('.completed').length;
 
-    cardCounter.textContent = `Total: ${total} Items |  Completed: ${completed}`;
+    cardCounter.textContent = `Total: ${total} Items | Completed: ${completed}`;
 };
 
 // ==========================================
@@ -112,8 +125,14 @@ actionList.addEventListener('click', (e) => {
     } 
     else if (action === 'delete') {
         // Fade out/remove currentCard from DOM, update totals
-        currentCard.remove();
-        updateCounter();
+        currentCard.style.transition = 'all 0.3s ease';
+        currentCard.style.opacity = '0';
+        currentCard.style.transform = 'scale(0.9';
+        setTimeout(() => {
+            currentCard.remove();
+            updateCounter();
+        }, 300);
+        
     } 
     else if (action === 'up') {
         // Find sibling element directly above currentCard
