@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express test</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal greeting</title>
+  <script src="/js/client.js" defer></script>
 </head>
-
 <body>
-    <h1>Success!!</h1>
-    <h3>Wazzup <%= name %>
-    </h3>
-    <br />
-    <a href="/">
-        Go back </a>
+  <h1>Success!</h1>
+  <h2>Wazzup <%= name %></h2>
+  <p id="request-message" role="alert"></p>
+  <a href="/" data-page>Go back</a>
 </body>
-
 </html>

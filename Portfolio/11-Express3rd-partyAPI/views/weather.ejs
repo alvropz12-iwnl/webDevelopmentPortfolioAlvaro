@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather report</title>
+</head>
+<body>
+  <h1>Weather report</h1>
+  <form action="/" method="post">
+    <label for="cityName">City Name</label>
+    <input id="cityName" type="text" name="cityName" value="<%= cityName %>" required>
+    <button type="submit">Go</button>
+  </form>
+  <% if (error) { %>
+    <p role="alert"><%= error %></p>
+  <% } else if (weather) { %>
+    <h2>Weather in <%= cityName %></h2>
+    <p><%= weather.temperature %> °C</p>
+    <p><%= weather.description %></p>
+    <img src="https://openweathermap.org/img/wn/<%= weather.icon %>@2x.png" alt="<%= weather.description %>">
+  <% } %>
+  <p><a href="/">Back to home</a></p>
+</body>
+</html>

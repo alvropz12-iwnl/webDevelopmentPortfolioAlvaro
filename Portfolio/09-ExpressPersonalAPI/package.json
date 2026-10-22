@@ -1,0 +1,14 @@
+{
+  "name": "alvaro-express-personal-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Greetings and a TODO list for Alvaro's web portfolio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}

@@ -2,11 +2,508 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Website - CSS</title>
+
+  <title>Alvaro Perez Fajardo - JavaScript</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@600;700&family=Sacramento&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/server.js" defer></script>
 </head>
+
 <body>
-  
+  <div class="top-container" id="home">
+    <img
+      class="cloud top-cloud"
+      src="images/cloud.png"
+      alt="Decorative cloud"
+    >
+
+    <h1>I'm Alvaro</h1>
+    <h2>Systems Engineering student</h2>
+
+    <img
+      class="cloud bottom-cloud"
+      src="images/cloud.png"
+      alt="Decorative cloud"
+    >
+
+    <img
+      class="mountain"
+      src="images/mountain.png"
+      alt="Decorative mountain"
+    >
+  </div>
+
+  <nav>
+    <a href="#profile">Profile</a> |
+    <a href="#background">Background</a> |
+    <a href="#hobbies">Hobbies</a> |
+    <a href="destination.html">My Favorite Spots</a> |
+    <a href="#people">Meet My Heroes</a> |
+    <a href="#schedule">Schedule</a> |
+    <a href="#schedule-form">Schedule Form</a>
+  </nav>
+
+  <main>
+    <div class="section">
+      <section id="profile">
+        <h2>My Profile</h2>
+
+        <table id="schedule-table">
+          <tr>
+            <td>
+              <img
+                src="images/my-photo.jpg"
+                alt="Photo of Alvaro Perez Fajardo"
+                width="180"
+              >
+            </td>
+
+            <td>
+              <p>
+                <strong>Current occupation:</strong>
+                I do not have a formal job at the moment; I am a Systems
+                Engineering student.
+              </p>
+
+              <p>
+                <strong>Address:</strong>
+                Guadalajara, Jalisco, Mexico
+              </p>
+
+              <p>
+                I am Alvaro, I am 19 years old, and I study Systems
+                Engineering. I am passionate about soccer, listening to
+                music, and going out with my friends.
+              </p>
+
+              <p>
+                <em>"What's up, Doc?"</em>
+              </p>
+            </td>
+          </tr>
+        </table>
+
+        <hr>
+      </section>
+    </div>
+
+    <div class="section">
+      <section id="background">
+        <h2>Background</h2>
+
+        <p>
+          I am studying Systems Engineering and my goal is to continue
+          learning about technology and develop useful software as a
+          professional.
+        </p>
+
+        <h3>Education</h3>
+
+        <ul>
+          <li>
+            <em>2011–2021</em>
+
+            <a href="https://www.imaoccidente.edu.mx/" target="_blank">
+              <img
+                src="images/imao-logo.png"
+                alt="Instituto Miguel Angel de Occidente logo"
+              >
+
+              <strong>Instituto Miguel Angel de Occidente</strong>
+            </a>
+
+            — Kindergarten to middle school
+          </li>
+
+          <li>
+            <em>2021–2024</em>
+
+            <a href="https://www.imaoccidente.edu.mx/" target="_blank">
+              <img
+                src="images/imao-logo.png"
+                alt="Instituto Miguel Angel de Occidente logo"
+              >
+
+              <strong>Instituto Miguel Angel de Occidente</strong>
+            </a>
+
+            — High school
+          </li>
+
+          <li>
+            <em>2025–2030</em>
+
+            <a
+              href="https://www.up.edu.mx/campus-guadalajara/"
+              target="_blank"
+            >
+              <img
+                src="images/up-logo.png"
+                alt="Universidad Panamericana logo"
+              >
+
+              <strong>Universidad Panamericana</strong>
+            </a>
+
+            — Systems Engineering
+          </li>
+        </ul>
+
+        <h3>Skills</h3>
+
+        <ol>
+          <li>HTML — 70%</li>
+          <li>CSS — 50%</li>
+          <li>JavaScript — 30%</li>
+          <li>Python — 30%</li>
+          <li>Git and GitHub — 30%</li>
+        </ol>
+
+        <hr>
+      </section>
+    </div>
+
+    <div class="section">
+      <section id="hobbies">
+        <h2>Hobbies</h2>
+
+        <h3>Favorite Food</h3>
+
+        <h4>Top 5 cuisines</h4>
+
+        <ol>
+          <li>Mexican</li>
+          <li>Italian</li>
+          <li>Japanese</li>
+          <li>Spanish</li>
+          <li>German</li>
+        </ol>
+
+        <h4>Bottom 3 cuisines</h4>
+
+        <ol>
+          <li>Turkish</li>
+          <li>Arab</li>
+          <li>Indian</li>
+        </ol>
+
+        <h3>Favorite Books, Movies and TV Shows</h3>
+
+        <ul>
+          <li>
+            <img src="images/books.png" alt="Books">
+
+            <strong>Books</strong>
+
+            <ul>
+              <li>Atomic Habits</li>
+              <li>Relentless: From Good to Great to Unstoppable</li>
+              <li>Meditations by Marcus Aurelius</li>
+            </ul>
+          </li>
+
+          <li>
+            <img src="images/movies.jpg" alt="Movies and TV shows">
+
+            <strong>Movies &amp; TV Shows</strong>
+
+            <ul>
+              <li>Star Wars</li>
+              <li>The Lord of the Rings</li>
+              <li>Harry Potter</li>
+            </ul>
+          </li>
+        </ul>
+
+        <hr>
+      </section>
+    </div>
+
+    <div class="section">
+      <section id="destinations">
+        <h2>My Favorite Spots</h2>
+
+        <p>
+          Discover five of the destinations I would like to visit or
+          revisit.
+        </p>
+
+        <p>
+          <a href="destination.html">Open the destinations page</a>
+        </p>
+
+        <h3>Direct Links</h3>
+
+        <ul>
+          <li>
+            <a href="destination.html#destination-1">Ibiza</a>
+          </li>
+
+          <li>
+            <a href="destination.html#destination-2">Cancun</a>
+          </li>
+
+          <li>
+            <a href="destination.html#destination-3">Los Angeles</a>
+          </li>
+
+          <li>
+            <a href="destination.html#destination-4">Rio de Janeiro</a>
+          </li>
+
+          <li>
+            <a href="destination.html#destination-5">Mar del Plata</a>
+          </li>
+        </ul>
+
+        <hr>
+      </section>
+    </div>
+
+    <div class="section">
+      <section id="people">
+        <h2>Meet My Heroes</h2>
+
+        <p>
+          These are three professional football players whom I admire.
+        </p>
+
+        <div class="team-container">
+          <div class="team-card">
+            <img src="images/neymar.jpg" alt="Neymar Jr.">
+
+            <div class="team-card-content">
+              <h3>Neymar Jr.</h3>
+
+              <p class="team-title">Professional Footballer</p>
+
+              <p>Born February 5, 1992.</p>
+
+              <p>
+                Won Olympic gold with Brazil at Rio 2016.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <img src="images/messi.jpg" alt="Lionel Messi">
+
+            <div class="team-card-content">
+              <h3>Lionel Messi</h3>
+
+              <p class="team-title">Professional Footballer</p>
+
+              <p>Born June 24, 1987.</p>
+
+              <p>
+                Won the FIFA World Cup with Argentina in 2022.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <img src="images/griezmann.jpg" alt="Antoine Griezmann">
+
+            <div class="team-card-content">
+              <h3>Antoine Griezmann</h3>
+
+              <p class="team-title">Professional Footballer</p>
+
+              <p>Born March 21, 1991.</p>
+
+              <p>
+                Won the FIFA World Cup with France in 2018.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+      </section>
+    </div>
+
+    <div class="section">
+      <section id="schedule">
+        <h2>Weekly Schedule</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Start</th>
+              <th>End</th>
+              <th>Description</th>
+              <th>Place</th>
+              <th>Type</th>
+              <th>Notes</th>
+              <th>Free/Busy</th>
+              <th>Flag</th>
+            </tr>
+          </thead>
+
+          <tbody id="schedule-entries">
+            <tr>
+              <td>2026-08-11</td>
+              <td>09:00</td>
+              <td>11:00</td>
+              <td>Web Design Class</td>
+              <td>Universidad Panamericana</td>
+              <td>School</td>
+              <td>Bring my laptop</td>
+              <td>
+                <img src="images/busy.png" alt="Busy" width="30">
+              </td>
+              <td><span class="schedule-flag" style="--flag-color: #11999e" title="Flag color: #11999e"></span></td>
+            </tr>
+
+            <tr>
+              <td>2026-08-12</td>
+              <td>08:00</td>
+              <td>09:30</td>
+              <td>Go swimming 3 km</td>
+              <td>Gym</td>
+              <td>Personal</td>
+              <td>Bring a change of clothes</td>
+              <td>
+                <img src="images/busy.png" alt="Busy" width="30">
+              </td>
+              <td><span class="schedule-flag" style="--flag-color: #11999e" title="Flag color: #11999e"></span></td>
+            </tr>
+
+            <tr>
+              <td>2026-08-13</td>
+              <td>16:00</td>
+              <td>18:00</td>
+              <td>Study JavaScript</td>
+              <td>Home</td>
+              <td>School</td>
+              <td>Complete exercises</td>
+              <td>
+                <img src="images/free.png" alt="Free" width="30">
+              </td>
+              <td><span class="schedule-flag" style="--flag-color: #11999e" title="Flag color: #11999e"></span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr>
+      </section>
+    </div>
+
+    <div class="section">
+      <section id="schedule-form">
+        <h2>Weekly Schedule Form</h2>
+
+        <p>Complete the form to register a new activity.</p>
+
+        <form id="activity-form" action="#" method="post">
+          <p>
+            <label for="date">Date:</label>
+
+            <input type="date" id="date" name="date" required>
+          </p>
+
+          <p>
+            <label for="start">Time start:</label>
+
+            <input type="time" id="start" name="start" required>
+          </p>
+
+          <p>
+            <label for="end">Time end:</label>
+
+            <input type="time" id="end" name="end" required>
+          </p>
+
+          <p>
+            <label for="activity">Activity:</label>
+
+            <input
+              type="text"
+              id="activity"
+              name="activity"
+              placeholder="Write the activity"
+              required
+            >
+          </p>
+
+          <p>
+            <label for="place">Place:</label>
+
+            <input
+              type="text"
+              id="place"
+              name="place"
+              placeholder="Write the place"
+            >
+          </p>
+
+          <p>
+            <label for="type">Type:</label>
+
+            <select id="type" name="type">
+              <option value="school">School</option>
+              <option value="personal">Personal</option>
+              <option value="professional">Professional</option>
+              <option value="familiar">Familiar</option>
+              <option value="other">Other</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="notes">Notes:</label>
+          </p>
+
+          <textarea
+            id="notes"
+            name="notes"
+            rows="5"
+            cols="35"
+            placeholder="Additional notes"
+          ></textarea>
+
+          <p>
+            <label for="flag">Flag color:</label>
+
+            <input type="color" id="flag" name="flag">
+          </p>
+
+          <p>
+            <label for="free-busy">Currently busy:</label>
+
+            <input
+              type="checkbox"
+              id="free-busy"
+              name="free-busy"
+            >
+          </p>
+
+          <p>
+            <input type="submit" value="Add activity">
+          </p>
+          <p id="schedule-message" role="status" aria-live="polite"></p>
+        </form>
+
+        <hr>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      <a href="#home">Back to top</a>
+    </p>
+
+    <p>© 2026 Alvaro Perez Fajardo</p>
+  </footer>
 </body>
 </html>

@@ -1,25 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express test</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alvaro's Express API</title>
+  <script src="/js/client.js" defer></script>
 </head>
-
 <body>
-    <% if (locals.error) { %>
-        <h3>
-            <%= error %>
-        </h3>
-        <% } %>
-            <form action="/greet" method="get">
-                Register:
-                <input type="text" name="name" id="name" placeholder="Name">
-                <input type="submit" value="go next">
-            </form>
+  <h1>Alvaro's Express API</h1>
+  <p id="request-message" role="alert"><%= error %></p>
 
+  <form action="/greet" method="get">
+    <label for="name">Register your name:</label>
+    <input type="text" name="name" id="name" placeholder="Name" required>
+    <button type="submit">Say hello</button>
+  </form>
+
+  <% if (names.length > 0) { %>
+    <p>Hello, <%= names[names.length - 1] %>!</p>
+    <h2>Everyone we have greeted</h2>
+    <ul>
+      <% names.forEach((name, index) => { %>
+        <li><a href="/greet?index=<%= index %>" data-page><%= name %></a></li>
+      <% }); %>
+    </ul>
+  <% } %>
+
+  <hr>
+  <h2>TODO List</h2>
+  <form action="/task" method="post">
+    <label for="task">New task:</label>
+    <input type="text" id="task" name="task" required>
+    <button type="submit">Add task</button>
+  </form>
+
+  <ol>
+    <% tasks.forEach((task, index) => { %>
+      <li>
+        <p><%= task %></p>
+        <form action="/task/<%= index %>/move" method="post">
+          <button name="direction" value="up" aria-label="Move task up" <%= index === 0 ? "disabled" : "" %>>↑</button>
+          <button name="direction" value="down" aria-label="Move task down" <%= index === tasks.length - 1 ? "disabled" : "" %>>↓</button>
+        </form>
+        <form action="/task/<%= index %>" method="post" data-method="DELETE">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ol>
 </body>
-
 </html>

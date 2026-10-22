@@ -1,0 +1,15 @@
+{
+  "name": "07-basicnode",
+  "version": "1.0.0",
+  "description": "Simple Node exercises with modules and file access",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "star-wars-quotes": "^1.0.2",
+    "superheroes": "^2.0.0",
+    "supervillains": "^2.2.0"
+  }
+}
